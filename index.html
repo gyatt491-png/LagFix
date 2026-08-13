@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>LagFix MAX</title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+</head>
+
+<body>
+
+  <header>
+
+    <div class="logo">
+      🎮 LagFix <span>MAX</span>
+    </div>
+
+    <div
+      class="status"
+      id="status"
+    >
+      ● READY
+    </div>
+
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <p class="label">
+        REAL LAG DIAGNOSTICS
+      </p>
+
+      <h1>
+        Find out what's<br>
+        <span>actually</span> causing lag.
+      </h1>
+
+      <p class="description">
+        LagFix measures your connection,
+        stability, device performance,
+        and helps explain what's causing
+        your Roblox lag.
+      </p>
+
+      <button id="startTest">
+        🧪 RUN FULL TEST
+      </button>
+
+      <p class="note">
+        No fake results. No downloads.
+      </p>
+
+    </section>
+
+
+    <!-- MAIN RESULTS -->
+
+    <section
+      id="results"
+      class="results"
+    >
+
+      <div class="result-card">
+
+        <div class="result-icon">
+          📶
+        </div>
+
+        <div>
+
+          <h2>
+            Connection
+          </h2>
+
+          <p id="connectionResult">
+            Not tested
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-icon">
+          ⚡
+        </div>
+
+        <div>
+
+          <h2>
+            Latency
+          </h2>
+
+          <p id="latencyResult">
+            Not tested
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-icon">
+          📊
+        </div>
+
+        <div>
+
+          <h2>
+            Stability
+          </h2>
+
+          <p id="stabilityResult">
+            Not tested
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-card">
+
+        <div class="result-icon">
+          🎮
+        </div>
+
+        <div>
+
+          <h2>
+            Performance
+          </h2>
+
+          <p id="performanceResult">
+            Not tested
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DETAILED MEASUREMENTS -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        NETWORK MEASUREMENTS
+      </p>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+          <span>Minimum Ping</span>
+          <strong id="minimumResult">
+            —
+          </strong>
+        </div>
+
+        <div class="info-item">
+          <span>Average Ping</span>
+          <strong id="averageResult">
+            —
+          </strong>
+        </div>
+
+        <div class="info-item">
+          <span>Maximum Ping</span>
+          <strong id="maximumResult">
+            —
+          </strong>
+        </div>
+
+        <div class="info-item">
+          <span>Jitter</span>
+          <strong id="jitterResult">
+            —
+          </strong>
+        </div>
+
+        <div class="info-item">
+          <span>Ping Range</span>
+          <strong id="rangeResult">
+            —
+          </strong>
+        </div>
+
+        <div class="info-item">
+          <span>Failed Tests</span>
+          <strong id="failureResult">
+            —
+          </strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PING GRAPH -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        PING GRAPH
+      </p>
+
+      <div
+        id="pingGraph"
+        class="ping-graph"
+      ></div>
+
+    </section>
+
+
+    <!-- SCORES -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        LAGFIX SCORE
+      </p>
+
+      <div class="info-grid">
+
+        <div class="info-item">
+
+          <span>
+            Overall
+          </span>
+
+          <strong id="overallScore">
+            —
+          </strong>
+
+        </div>
+
+        <div class="info-item">
+
+          <span>
+            Network
+          </span>
+
+          <strong id="networkScore">
+            —
+          </strong>
+
+        </div>
+
+        <div class="info-item">
+
+          <span>
+            Stability
+          </span>
+
+          <strong id="stabilityScore">
+            —
+          </strong>
+
+        </div>
+
+        <div class="info-item">
+
+          <span>
+            Reliability
+          </span>
+
+          <strong id="reliabilityScore">
+            —
+          </strong>
+
+        </div>
+
+        <div class="info-item">
+
+          <span>
+            Device
+          </span>
+
+          <strong id="deviceScore">
+            —
+          </strong>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIAGNOSIS -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        DIAGNOSIS
+      </p>
+
+      <h2 id="diagnosisTitle">
+        Run a test to find your problem.
+      </h2>
+
+      <p id="diagnosisText">
+        LagFix will analyze your
+        measurements after the test finishes.
+      </p>
+
+    </section>
+
+
+    <!-- QUICK FIXES -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        QUICK FIXES
+      </p>
+
+      <div id="quickFix"></div>
+
+    </section>
+
+
+    <!-- ROBLOX GRAPHICS TUTORIAL -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        ROBLOX GRAPHICS & FPS TUTORIAL
+      </p>
+
+      <h2>
+        🎮 Fix Roblox FPS problems
+      </h2>
+
+      <p>
+        Follow these steps if your game feels
+        choppy or your FPS is low.
+      </p>
+
+      <div id="robloxGuide"></div>
+
+    </section>
+
+
+    <!-- DEVICE INFORMATION -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        DEVICE INFORMATION
+      </p>
+
+      <div id="deviceInfo"></div>
+
+    </section>
+
+
+    <!-- CONNECTION INFORMATION -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        CONNECTION INFORMATION
+      </p>
+
+      <div id="connectionInfo"></div>
+
+    </section>
+
+
+    <!-- GEARUP COMPARISON -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        GEARUP COMPARISON
+      </p>
+
+      <h2>
+        ⚡ Compare your connection
+      </h2>
+
+      <p>
+        LagFix can compare your current
+        measurements with an earlier baseline.
+      </p>
+
+      <div id="gearupResult"></div>
+
+    </section>
+
+
+    <!-- TEST HISTORY -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        TEST HISTORY
+      </p>
+
+      <div id="testHistory"></div>
+
+      <button id="clearHistory">
+        🗑️ CLEAR HISTORY
+      </button>
+
+    </section>
+
+
+    <!-- REPORT -->
+
+    <section class="diagnosis">
+
+      <p class="label">
+        REPORT
+      </p>
+
+      <button id="copyReport">
+        📋 COPY REPORT
+      </button>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- OUR SPONSORS -->
+    <!-- ========================= -->
+
+    <section class="diagnosis sponsors">
+
+      <p class="label">
+        OUR SPONSORS
+      </p>
+
+      <div class="sponsor-card">
+
+        <div class="sponsor-icon">
+          ▶️
+        </div>
+
+        <div class="sponsor-info">
+
+          <h2>
+            Asianlufffplays
+          </h2>
+
+          <p>
+            Check out our sponsor on YouTube!
+          </p>
+
+          <a
+            href="https://www.youtube.com/@Asianlufffplays"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="sponsor-button"
+          >
+            ▶️ VISIT YOUTUBE CHANNEL
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    LagFix MAX •
+    Diagnostic tools, not guaranteed fixes
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
